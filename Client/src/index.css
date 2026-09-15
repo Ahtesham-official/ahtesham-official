@@ -1,0 +1,132 @@
+@import "tailwindcss";
+
+/* ── Global base resets for full responsiveness ── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+}
+
+/* Lenis Smooth Scroll CSS setup */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+
+
+@layer utilities {
+  .font-lumiere {
+    font-family: "Cinzel Decorative", "Six Caps", "Syne", serif;
+    letter-spacing: 0.05em;
+  }
+
+  .font-outfit {
+    font-family: "Outfit", sans-serif;
+  }
+
+  .font-six-caps {
+    font-family: "Six Caps", sans-serif;
+  }
+}
+
+.six-caps-regular {
+  font-family: "Six Caps", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Vibrant, soft ambient crimson gradients */
+.corner-red-gradient {
+  background:
+    radial-gradient(circle at 10% 25%, rgba(220, 20, 60, 0.18) 0%, transparent 45%),
+    radial-gradient(circle at 65% 15%, rgba(220, 20, 60, 0.12) 0%, transparent 40%),
+    radial-gradient(circle at 45% 75%, rgba(220, 20, 60, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 90% 80%, rgba(220, 20, 60, 0.10) 0%, transparent 45%),
+    #000;
+}
+
+/* Subtle crimson edge vignette for depth across sections */
+.section-vignette {
+  position: relative;
+}
+
+.section-vignette::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse at center, transparent 55%, rgba(220, 20, 60, 0.06) 100%);
+  z-index: 1;
+}
+
+.glass-card {
+  background: rgba(18, 18, 18, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(220, 20, 60, 0.15);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+}
+
+.glass-card:hover {
+  border-color: rgba(220, 20, 60, 0.4);
+  box-shadow: 0 10px 40px 0 rgba(220, 20, 60, 0.15);
+}
+
+.glow-text-crimson {
+  text-shadow: 0 0 15px rgba(220, 20, 60, 0.45), 0 0 30px rgba(220, 20, 60, 0.2);
+}
+
+.glow-box-crimson {
+  box-shadow: 0 0 20px rgba(220, 20, 60, 0.25);
+}
+
+/* Clean subject PNG outline glow */
+.subject-png-glow {
+  filter: drop-shadow(0 0 18px rgba(220, 20, 60, 0.55)) drop-shadow(0 0 35px rgba(220, 20, 60, 0.25));
+  transition: filter 0.4s ease, transform 0.4s ease;
+}
+
+.subject-png-glow:hover {
+  filter: drop-shadow(0 0 28px rgba(220, 20, 60, 0.75)) drop-shadow(0 0 50px rgba(220, 20, 60, 0.35));
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #09090b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #dc143c;
+}
